@@ -63,7 +63,7 @@ Like a Container. Can run multible container
 
 ## Deployment
 
-Monitors the pods, makes sure they are running
+Monitors the pods, makes sure they are running. If someone crashes the deployment will create the pod again
 
 ## Service
 

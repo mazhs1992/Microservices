@@ -1,0 +1,18 @@
+apiVersion: apps/v1                     
+kind: Deployment                          
+metadata:                          
+  name: posts-depl                      
+spec: 
+  replicas : 1        # number of pods we want to create   
+  selector:           # find all the pods that have been created and get the ones with <posts>
+    matchLabels:
+      app: posts    
+  template:           #confg for the pods -like the conf on post.yaml
+    metadata:
+      labels:
+        app: posts  
+    spec: 
+      containers:
+        - name: posts                  
+          image: vagmaz/posts:0.0.1     
+      
