@@ -1,0 +1,9 @@
+apiVersion: v1                      # set of object we want K8s to look at
+kind: Pod                           # type of obj we want to create
+metadata:                           # config option fro thr obj we are about to create
+  name: posts                       # name of pod
+spec:                               # attributes we want to apply to the obj
+  containers:                       # Array of container for the pod to create. We can have many containers
+    - name: posts                   # Name of the container
+      image: vagmaz/posts:0.0.1     # the exact image we want to use . If we haven't specified  the v. 0.0.1  docker whould look on the docker hub
+      

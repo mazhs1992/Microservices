@@ -67,7 +67,28 @@ Monitors the pods, makes sure they are running
 
 ## Service
 
+Access on a running container
 
 
+<br/>
+<br/>
+
+# Infrastructure File
+
+This  file contains all the configuration, all the code related to the deployment or management of all of our different services .
+
+## k8s
+ contains all the kubernetes config file
+
+  # instructions
+
+  from ./k8s 
+
+ 1. run `kubectl apply -f posts.yaml` to create pod
+ 2. run `kubectl get pods` to see what pods are running
+ 3. run `kubectl delete pod <pod_name>` to delete pod
+ 4. run `kubectl  exec -it <pod_name> [cmd]`  run cmd on <pod_name> container
+ 5. run `kubectl  logs  posts ` to see logs
+ 6. run `kubectl  describe pod posts` info about the pod
 
 
