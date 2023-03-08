@@ -23,6 +23,19 @@ In order to tell Docker to not include node_modules we create .dockerignore
 <br/>
 <br/>
 
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune
+    6.  docker push <docker_id>/posts
+
+
+<br/>
+<br/>
+
 # Kubernetes
 
  To use kubernetes we need images up and running in order to deploy them on kubernetes cluster.
@@ -64,6 +77,15 @@ Like a Container. Can run multible container
 ### Deployment
 
 Monitors the pods, makes sure they are running. If someone crashes the deployment will create the pod again
+
+ Deployment commands
+
+    1. kubectl get deployments - list of deployments
+    2. kubectl describe deployment [depl name] - details of deployment
+    3. kubectl apply -f [config file name] - create deployment out of config file
+    4. kubectl delete deployment [depl name]
+    5. kubectl get deployments - see deployments running
+    6. kubectl rollout restart deployment [depl_name] -restart deployment
 
 ### Service
 
