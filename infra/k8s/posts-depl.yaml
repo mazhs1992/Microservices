@@ -14,5 +14,69 @@ spec:
     spec: 
       containers:
         - name: posts                  
-          image: vagmaz/posts:0.0.2     
+          image: vagmaz/posts    # OR  image: vagmaz/posts:latest  
       
+<br/>
+<br/>
+
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune<br/>
+<br/>
+
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune<br/>
+<br/>
+
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune<br/>
+<br/>
+
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune<br/>
+<br/>
+
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune<br/>
+<br/>
+
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune<br/>
+<br/>
+
+# Docker Commands
+
+    1.  docker build -t <your_docker_id/image_name> .
+    2.  docker exec -it <docker_id> .
+    3.  docker run <image_name>
+    4.  docker start <container_id>
+    5.  docker system prune

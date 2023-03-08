@@ -49,23 +49,23 @@ In order to tell Docker to not include node_modules we create .dockerignore
 
 # Kubernetes Dictionary
 
-## Kubernetes Cluster
+### Kubernetes Cluster
 
 Collection of nodes + a master to manage them
 
-## Node
+### Node
 
 VM that will run our container
 
-## Pod
+### Pod
 
 Like a Container. Can run multible container
 
-## Deployment
+### Deployment
 
 Monitors the pods, makes sure they are running. If someone crashes the deployment will create the pod again
 
-## Service
+### Service
 
 Access on a running container
 
@@ -80,15 +80,39 @@ This  file contains all the configuration, all the code related to the deploymen
 ## k8s
  contains all the kubernetes config file
 
-  # instructions
+  ### Instructions
 
   from ./k8s 
 
- 1. run `kubectl apply -f posts.yaml` to create pod
- 2. run `kubectl get pods` to see what pods are running
- 3. run `kubectl delete pod <pod_name>` to delete pod
- 4. run `kubectl  exec -it <pod_name> [cmd]`  run cmd on <pod_name> container
- 5. run `kubectl  logs  posts ` to see logs
- 6. run `kubectl  describe pod posts` info about the pod
+    1. run `kubectl apply -f posts.yaml` to create pod
+    2. run `kubectl get pods` to see what pods are running
+    3. run `kubectl delete pod <pod_name>` to delete pod
+    4. run `kubectl  exec -it <pod_name> [cmd]`  run cmd on <pod_name> container
+    5. run `kubectl  logs <pod_name> ` to see logs
+    6. run `kubectl  describe pod <pod_name>` info about the pod
+    7. run `kubectl rollout restart deployment [depl_name]`
 
 
+
+<br/>
+
+# Update .v of docker container
+
+## First way: manually update the config file
+
+    1.  build the new version
+    2.  Update the config file of the deployment
+    3.  Tell K8s to use the new file `kubectl apply -f < filename >`
+
+## Second way: Push image to docker hub
+
+    1.  Update the config file of the deployment without specifying  image version (on posts-depl)
+    2.  From ./posts run " docker build -t <docker-id>/posts . "  to rebuild the image
+    3.  Push docker image on docker hub " docker push <docker-id>/posts "
+    4.  Tell our deployment to run that version " kubectl rollout restart deployment [depl_name] "
+
+
+
+
+
+    
