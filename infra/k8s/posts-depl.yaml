@@ -15,4 +15,19 @@ spec:
       containers:
         - name: posts                  
           image: vagmaz/posts    # OR  image: vagmaz/posts:latest  
-  
+
+---
+
+
+apiVersion: v1                     
+kind: Service                          
+metadata:                          
+  name: posts-clusterip-srv                      
+spec: 
+  selector: 
+    app: posts
+  ports: 
+    - name: posts
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
