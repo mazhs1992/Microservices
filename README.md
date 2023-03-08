@@ -90,6 +90,13 @@ Monitors the pods, makes sure they are running. If someone crashes the deploymen
 ### Service
 
 Access on a running container
+Provide networking between pods
+
+    1.  After creating post-srv.yaml
+    2.  run `kubectl apply -f posts-srv.yaml`
+    3.  run `kubectl get services`
+    4.  run `kubectl describe service posts-srv`
+
 
 
 <br/>
