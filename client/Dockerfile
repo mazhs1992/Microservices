@@ -1,6 +1,14 @@
 # Specify a base image
 FROM node:16-alpine
 
+
+# Add the following lines 
+# This are due to bug  see lecture 98 for details
+ENV CI=true
+ENV WDS_SOCKET_PORT=0
+# This are due to bug  see lecture 98 for details
+
+
 # Install some dependencies
 WORKDIR /app
 
