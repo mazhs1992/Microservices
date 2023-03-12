@@ -1,3 +1,8 @@
+RUN skaffold dev and the app will start
+Ctrl + C * 2 to close
+
+
+
 apiVersion: skaffold/v2alpha3                     
 kind: Config  
 deploy:
