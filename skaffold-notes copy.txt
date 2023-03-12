@@ -1,0 +1,74 @@
+apiVersion: skaffold/v2alpha3                     
+kind: Config  
+deploy:
+  kubectl:
+    manifests: 
+      - ./infra/k8s/*   #video 103 // 
+                      # skaffold  --> watch all this yaml files for changes
+                      # skaffold is going to automatically reapply that one config file to our Kubernetes cluster.
+  build:
+    local:
+      push: false  # Dont push image to docker hub
+    artifacts:
+
+      # CLIENT
+      - image: vagmaz/client
+        context: client
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src:  'src/**/*.js'  ##  If skaffold catch changes in ./src files it will immediatelly update our POD
+              dest:  .
+
+
+      # COMMENTS
+      - image: vagmaz/comments
+        context: comments
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src:  '*.js'  ##  If skaffold catch changes in ./src files it will immediatelly update our POD
+              dest: .
+
+
+      #EVENT BUS
+      - image: vagmaz/event-bus
+        context: event-bus
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src:  '*.js'  ##  If skaffold catch changes in ./src files it will immediatelly update our POD
+              dest: .
+
+      # MODERATION
+      - image: vagmaz/moderation
+        context: moderation
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src:  '*.js'  ##  If skaffold catch changes in ./src files it will immediatelly update our POD
+              dest: .
+
+      # POSTS     
+      - image: vagmaz/posts
+        context: posts
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src:  '*.js'  ##  If skaffold catch changes in ./src files it will immediatelly update our POD
+              dest: .
+
+      # QUERY
+      - image: vagmaz/query
+        context: query
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src:  '*.js'  ##  If skaffold catch changes in ./src files it will immediatelly update our POD
+              dest: .        

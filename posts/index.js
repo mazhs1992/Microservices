@@ -43,6 +43,6 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("Version 2.0.2");
+  console.log("Skaffold test for changes");
   console.log("Listening on 4000");
 });
